@@ -67,4 +67,26 @@ models:
       # +target_lag: '1 minute'
       # +snowflake_warehouse: VWH_DBT_HOL
       # +refresh_mode: incremental
-
+dbt_project:
+  outputs:
+    dev:
+      account: ZY63636
+      database: dbt_hol_2025_dev
+      password: SFalphaalpha123
+      role: dbt_hol_role_dev
+      schema: public
+      threads: 100
+      type: snowflake
+      user: dbt_hol_user
+      warehouse: vwh_dbt_hol_dev
+    prod:
+      account: ZY63636
+      database: dbt_hol_2025_prod
+      password: SFalphaalpha123
+      role: dbt_hol_role_prod
+      schema: public
+      threads: 100
+      type: snowflake
+      user: dbt_hol_user
+      warehouse: vwh_dbt_hol_prod
+  target: dev
